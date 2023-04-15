@@ -194,9 +194,9 @@
         font-size: 18px;
     }
 }
-@media only screen and (max-width: 375px) {
+/* @media only screen and (max-width: 375px) {
     /* For mobile phones: */
-    #rock{
+    /* #rock{
         width: 150%;
     }
     #paper{
@@ -239,4 +239,4 @@
         margin-right: 40px;
         font-size: 18px;
     }
-}
+} */ 
