@@ -9,7 +9,14 @@
 </head>
 
 <body>
+
+    <audio id="cheering" src="sound/sounds_Cheering-SoundBible.com-1115515042.wav"></audio>
+    <audio  id="sad" src="sound/sounds_Sad-SoundBible.com-759843766.wav"></audio>
+    <audio id="btnclick" src="sound/sounds_zapsplat_multimedia_button_click_005_53866.mp3"></audio>
+
     <h2 id="heading">Rock Pepar Scissor game</h2>
+    <h4 id="head">Play for 5 rounds!!</h4>
+    <p id="final"></p>
     <div class="container">
         <button id="rock"> <img src="img/rock.png" alt="" class="rock"></button>
         <!-- <button id="rock">Rock</button>  -->
@@ -19,14 +26,19 @@
     </div>
 
 
-    <h2 id="pScore"></h2>
-    <h2 id="cScore"></h2>
+    <div class="selection">
+        <h2 id="playerSelection">Player:</h2>
+        <h2>VS</h2>
+        <h2 id="computerSelection">Computer:</h2>
+    </div>
+  
+    <div class="score">
+        <h1 id="pScore">0</h1>
+        <h1 id="cScore">0</h1>
+    </div>
+    
+    <p id="res">Start the Match</p>
 
-    <h2 id="playerSelection"></h2>
-    <h2 id="computerSelection"></h2>
-
-    <p id="res"></p>
-    <p id="final"></p>
     <button id="restart">Restart Game</button>
 
 

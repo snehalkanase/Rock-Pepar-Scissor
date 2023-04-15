@@ -1,4 +1,3 @@
-const buttonc = document.querySelectorAll('#button');
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissor = document.getElementById("scissor");
@@ -9,22 +8,27 @@ const final = document.getElementById('final');
 const restart = document.getElementById('restart');
 let playerChoice = document.getElementById('playerSelection');
 let compChoice = document.getElementById('computerSelection');
+let btnclick = document.getElementById('btnclick');
+let cheering = document.getElementById('cheering');
+let sad = document.getElementById('sad');
 let playerScore = 0;
 let computerScore = 0;
 
-rock.addEventListener('click', () => handleClick("Rock"));
+rock.addEventListener('click',  () => handleClick("Rock"));
 paper.addEventListener('click', () => handleClick("Paper"));
 scissor.addEventListener('click', () => handleClick("Scissor"));
+
+
 
 restart.addEventListener('click', function restart() {
     location.reload();
  });
 
 function handleClick(playerSelection) {
-
-    playerChoice.innerHTML = playerSelection;
+    btnclick.play();
+    playerChoice.innerHTML = `Player: ${playerSelection}`; 
     const computerSelection = ComputerChoice();
-    compChoice.innerHTML = computerSelection;
+    compChoice.innerHTML = `Computer: ${computerSelection}`;
     res.innerHTML = playRound(playerSelection, computerSelection);
     updateScore();
 
@@ -53,7 +57,7 @@ function playRound(playerSelection, computerSelection) {
         // playerScore++;
         // computerScore++;
 
-        return "draw"
+        return "Draw the round!"
     } else if (playerSelection == "Rock" && computerSelection == "Scissor" ||
         playerSelection == "Paper" && computerSelection == "Rock" ||
         playerSelection == "Scissor" && computerSelection == "Paper") {
@@ -68,12 +72,13 @@ function playRound(playerSelection, computerSelection) {
         computerScore++;
         return `Computer win the Round!! ${computerSelection} beats the ${playerSelection}`
     }
+    
 
 }
 
 function updateScore() {
-    pScore.textContent = `Player Score:${playerScore}`;
-    cScore.innerHTML = `Computer Score:${computerScore}`;
+    pScore.textContent = `${playerScore}`;
+    cScore.innerHTML = `${computerScore}`;
     console.log(playerScore)
 }
 
@@ -90,7 +95,9 @@ function finalMsg() {
 
             computerScore = 0;
             playerScore = 0;
-            return "draw"
+            final.style.color = "red"
+            sad.play();
+            return "Draw! Better luck next time."
         } else if (playerScore > computerScore) {
             rock.disabled = true;
             paper.disabled = true;
@@ -98,7 +105,9 @@ function finalMsg() {
 
             computerScore = 0;
             playerScore = 0;
-            return " You win the match"
+            final.style.color = "Green"
+            cheering.play();
+            return " yeahh!! You win the match."
         } else if (playerScore < computerScore) {
             rock.disabled = true;
             paper.disabled = true;
@@ -106,7 +115,9 @@ function finalMsg() {
 
             computerScore = 0;
             playerScore = 0;
-            return "Computer win the match"
+            final.style.color = "red"
+            sad.play();
+            return "Computer win the match! try again.."
         }
 
     }
