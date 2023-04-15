@@ -35,6 +35,15 @@
 #scissor:active{
     border-color: rgba(228, 170, 11, 0.87);
 }
+#rock:hover{
+    border-color: rgba(228, 170, 11, 0.87);
+}
+#paper:hover{
+    border-color: rgba(228, 170, 11, 0.87);
+}
+#scissor:hover{
+    border-color: rgba(228, 170, 11, 0.87);
+}
 .paper{
     width: 100%;
     height: 100%;
